@@ -1,0 +1,150 @@
+{
+  "name": "Referenz Wartungsprotokoll",
+  "description": "Minimalbeispiel für BuilderTemplate-Import",
+  "category": "Heizung",
+  "printSettings": {
+    "fontSize": "xs",
+    "spacing": "compact",
+    "showBorders": false
+  },
+  "sections": [
+    {
+      "id": "sec001",
+      "title": "Sichtprüfung",
+      "layout": "single",
+      "rows": [
+        {
+          "id": "row001",
+          "type": "compositeChecklistRow",
+          "templateFieldId": "brenner_gereinigt",
+          "hasCheckbox": true,
+          "label": "Brenner gereinigt",
+          "column": "full",
+          "inlineElements": []
+        },
+        {
+          "id": "row002",
+          "type": "compositeChecklistRow",
+          "templateFieldId": "druck_checked",
+          "hasCheckbox": true,
+          "label": "Anlagendruck gemessen",
+          "column": "full",
+          "inlineElements": [
+            {
+              "id": "inl001",
+              "type": "decimal",
+              "templateFieldId": "anlagendruck_bar",
+              "decimals": 1,
+              "width": "sm"
+            },
+            {
+              "id": "inl002",
+              "type": "unit",
+              "templateFieldId": "unit_bar",
+              "unit": "bar"
+            }
+          ]
+        },
+        {
+          "id": "row002b",
+          "type": "compositeChecklistRow",
+          "templateFieldId": "betriebswerte",
+          "hasCheckbox": false,
+          "label": "Betriebswerte",
+          "column": "full",
+          "inlineElements": [
+            {
+              "id": "inl010",
+              "type": "staticText",
+              "templateFieldId": "lbl_druck",
+              "staticText": "Druck"
+            },
+            {
+              "id": "inl011",
+              "type": "decimal",
+              "templateFieldId": "druck_bar",
+              "decimals": 1,
+              "width": "sm"
+            },
+            {
+              "id": "inl012",
+              "type": "unit",
+              "templateFieldId": "unit_bar",
+              "unit": "bar"
+            },
+            {
+              "id": "inl013",
+              "type": "columnBreak",
+              "templateFieldId": "col_break_1"
+            },
+            {
+              "id": "inl014",
+              "type": "staticText",
+              "templateFieldId": "lbl_temp",
+              "staticText": "Temperatur"
+            },
+            {
+              "id": "inl015",
+              "type": "decimal",
+              "templateFieldId": "temp_c",
+              "decimals": 1,
+              "width": "sm"
+            },
+            {
+              "id": "inl016",
+              "type": "unit",
+              "templateFieldId": "unit_c",
+              "unit": "°C"
+            }
+          ]
+        },
+        {
+          "id": "row002c",
+          "type": "compositeChecklistRow",
+          "templateFieldId": "pruefzeile_3sp",
+          "hasCheckbox": false,
+          "label": "Prüfung",
+          "column": "full",
+          "inlineColumns": [
+            [
+              { "id": "inl020", "type": "date", "templateFieldId": "pruefdatum", "width": "sm" }
+            ],
+            [
+              { "id": "inl021", "type": "staticText", "templateFieldId": "lbl_druck2", "staticText": "Druck" },
+              { "id": "inl022", "type": "decimal", "templateFieldId": "druck2_bar", "decimals": 1, "width": "sm" },
+              { "id": "inl023", "type": "unit", "templateFieldId": "unit_bar2", "unit": "bar" }
+            ],
+            [
+              { "id": "inl024", "type": "checkbox", "templateFieldId": "io_ok", "label": "i.O." }
+            ]
+          ]
+        },
+        {
+          "id": "row003",
+          "type": "simpleField",
+          "templateFieldId": "bemerkungen",
+          "label": "Bemerkungen",
+          "fieldType": "textarea",
+          "column": "full"
+        },
+        {
+          "id": "row004",
+          "type": "simpleField",
+          "templateFieldId": "unterschrift_monteur",
+          "label": "Unterschrift Monteur",
+          "fieldType": "signature",
+          "required": true,
+          "column": "full"
+        },
+        {
+          "id": "row005",
+          "type": "simpleField",
+          "templateFieldId": "unterschrift_kunde",
+          "label": "Unterschrift Auftraggeber",
+          "fieldType": "signature",
+          "column": "full"
+        }
+      ]
+    }
+  ]
+}
